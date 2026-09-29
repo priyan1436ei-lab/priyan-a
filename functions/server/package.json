@@ -1,0 +1,24 @@
+{
+  "name": "finfam-payment-server",
+  "version": "1.0.0",
+  "description": "FinFam Real Payment Gateway Server with Razorpay, UPI, Cards, NetBanking, and Firestore Integration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "firebase-admin": "^12.0.0",
+    "nodemailer": "^10.0.12",
+    "razorpay": "^2.9.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

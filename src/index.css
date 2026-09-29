@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --finfam-bg: #050816;
+  --finfam-surface: #0D1322;
+  --finfam-accent: #06B6D4;
+}
+
+[data-theme="emerald"] {
+  --finfam-bg: #02140F;
+  --finfam-surface: #05261C;
+  --finfam-accent: #10B981;
+}
+
+[data-theme="cyber"] {
+  --finfam-bg: #031022;
+  --finfam-surface: #071C38;
+  --finfam-accent: #38BDF8;
+}
+
+[data-theme="amethyst"] {
+  --finfam-bg: #0E051C;
+  --finfam-surface: #1B0B33;
+  --finfam-accent: #C084FC;
+}
+
+[data-theme="light"] {
+  --finfam-bg: #0B132B;
+  --finfam-surface: #162447;
+  --finfam-accent: #00F0FF;
+}
+
+@layer base {
+  body {
+    background-color: var(--finfam-bg);
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090E1F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Glassmorphic card utility */
+.finfam-card {
+  background: #0E1528;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.finfam-card-elevated {
+  background: #141E38;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.finfam-glow-border {
+  box-shadow: 0 0 15px -3px rgba(6, 182, 212, 0.15);
+}
+
+.finfam-purple-glow {
+  box-shadow: 0 0 20px -5px rgba(124, 58, 237, 0.25);
+}
+
+/* Pulse animation for P2P beams */
+@keyframes beamPulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+.animate-beam {
+  animation: beamPulse 2s infinite ease-in-out;
+}

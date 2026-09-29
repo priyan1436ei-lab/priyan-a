@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Builds & Exports
+dist/
+**/dist/
+build/
+**/build/
+.expo/
+**/.expo/
+.eas/
+**/.eas/
+web-build/
+
+# Environment
+.env
+.env.local
+local.properties
+debug.keystore
+
+# IDE & OS
+.DS_Store
+*.iml
+.gradle
+.kotlin
+/.idea/
+.vscode/

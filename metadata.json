@@ -1,0 +1,7 @@
+{
+  "name": "FinFam",
+  "description": "Real-Time Real-Money Family Finance & Payouts System with Razorpay Live Gateway, RazorpayX Payouts, Supabase Realtime, verified webhooks, masked payment profiles, and Goal Ripple Intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

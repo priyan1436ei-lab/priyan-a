@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Payments collection - Read allowed only for payment owner; Write only from trusted Backend/Admin
+    match /payments/{paymentId} {
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow write: if false; // Server-side writes only through Firebase Admin SDK
+    }
+    
+    // Subscriptions collection - Read allowed for user; Write only from trusted Backend/Admin
+    match /subscriptions/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false; // Server-side writes only through Firebase Admin SDK
+    }
+    
+    // Orders collection - Temporary order creation intent
+    match /orders/{orderId} {
+      allow read: if request.auth != null && request.auth.uid == resource.data.userId;
+      allow write: if false;
+    }
+    
+    // Webhook events ledger - Internal server only
+    match /webhook_events/{eventId} {
+      allow read, write: if false;
+    }
+  }
+}
